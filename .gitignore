@@ -21,13 +21,6 @@
 .vscode/
 nacos/cache/**/*
 nacos/config/**/*
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
-nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
 
 
 *.iml
