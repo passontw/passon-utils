@@ -1,0 +1,102 @@
+# 編譯後的二進制檔案
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 測試二進制檔案
+*.test
+
+# 覆蓋率工具產生的檔案
+*.out
+*.prof
+*.cov
+
+# Go 特定忽略項目
+/vendor/
+/Godeps/
+.glide/
+.idea/
+.vscode/
+*.iml
+*.swp
+.DS_Store
+go.work
+
+# 本地環境配置
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 二進制輸出目錄
+/bin/
+/dist/
+
+# 依賴管理工具產生的檔案
+go.sum
+
+# 本地開發時產生的暫存檔案
+/tmp/
+/temp/
+
+# 單元測試的快取
+.testCoverage.txt
+
+# IDE 和編輯器產生的檔案
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.atom/
+.settings/
+*.code-workspace
+
+# Air 熱重載工具產生的檔案（如果您使用 air）
+/tmp/
+.air.toml
+
+# GoReleaser 產生的檔案（如果您使用 GoReleaser）
+/dist/
+
+# Go Race 檢測器產生的檔案
+race.out
+
+# macOS 特定檔案
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows 特定檔案
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux 特定檔案
+*~
+.directory
+.Trash-*
+
+# 日誌檔案
+*.log
+logs/
+
+# 本地配置檔案（可根據需求調整）
+*.local.yaml
+*.local.yml
+*.local.json
+*.local.toml
+config.local.*
+
+# Delve 除錯器產生的檔案
+__debug_bin*
+
+# 私鑰和證書檔案（基於安全考量）
+*.pem
+*.key
+*.crt
+*.cer
