@@ -19,6 +19,17 @@
 .glide/
 .idea/
 .vscode/
+nacos/cache/**/*
+nacos/config/**/*
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+nacos/cache/config/auth_service_config@@TEST_GOLANG_ENVS@@test_golang
+
+
 *.iml
 *.swp
 .DS_Store
@@ -83,7 +94,7 @@ $RECYCLE.BIN/
 
 # 日誌檔案
 *.log
-logs/
+logs
 
 # 本地配置檔案（可根據需求調整）
 *.local.yaml
@@ -100,3 +111,12 @@ __debug_bin*
 *.key
 *.crt
 *.cer
+
+./nacos
+*.json
+*.yaml
+*.yml
+*.toml
+*.ini
+*.conf
+*.log

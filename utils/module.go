@@ -12,8 +12,9 @@ func Module() fx.Option {
 		fx.Provide(
 			LoadNacosConfigFromEnv, // 回傳 NacosConfig
 			NewNacosClients,        // 回傳 configClient, namingClient
-			NewRedisClient,         // 回傳 *redis.Client
-			NewGormDB,              // 回傳 *gorm.DB
+			ParseConfig,            // 回傳 AppConfig
+			NewRedisClient,         // 依賴 AppConfig
+			NewGormDB,              // 依賴 AppConfig
 		),
 		fx.Invoke(
 			InitNacos, // 取 config 並註冊服務
@@ -22,13 +23,11 @@ func Module() fx.Option {
 }
 
 // InitNacos 取 config 並註冊服務
-func InitNacos(cfg NacosConfig, configClient interface{}, namingClient interface{}) error {
-	cc, _ := configClient.(config_client.IConfigClient)
-	nc, _ := namingClient.(naming_client.INamingClient)
-	if err := PrintConfig(cc, cfg); err != nil {
+func InitNacos(cfg NacosConfig, configClient config_client.IConfigClient, namingClient naming_client.INamingClient) error {
+	if err := PrintConfig(configClient, cfg); err != nil {
 		return err
 	}
-	if err := RegisterService(nc, cfg); err != nil {
+	if err := RegisterService(namingClient, cfg); err != nil {
 		return err
 	}
 	return nil

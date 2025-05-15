@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strconv"
@@ -24,6 +25,21 @@ type NacosConfig struct {
 	Service     string
 	IP          string
 	ServicePort uint64
+}
+
+type AppConfig struct {
+	Port          string `json:"PORT"`
+	DBHost        string `json:"DB_HOST"`
+	DBPort        int    `json:"DB_PORT"`
+	DBName        string `json:"DB_NAME"`
+	DBUser        string `json:"DB_USER"`
+	DBPassword    string `json:"DB_PASSWORD"`
+	RedisHost     string `json:"REDIS_HOST"`
+	RedisPort     int    `json:"REDIS_PORT"`
+	RedisUser     string `json:"REDIS_USERNAME"`
+	RedisPassword string `json:"REDIS_PASSWORD"`
+	RedisDB       int    `json:"REDIS_DB"`
+	// ... 其他欄位
 }
 
 // 讀取 .env 並回傳 NacosConfig
@@ -114,4 +130,20 @@ func RegisterService(namingClient naming_client.INamingClient, cfg NacosConfig) 
 	}
 	fmt.Println("服務註冊成功:", cfg.Service)
 	return nil
+}
+
+// ParseConfig 取得並解析 Nacos 設定檔內容
+func ParseConfig(cfgClient config_client.IConfigClient, cfg NacosConfig) (AppConfig, error) {
+	content, err := cfgClient.GetConfig(vo.ConfigParam{
+		DataId: cfg.DataId,
+		Group:  cfg.Group,
+	})
+	if err != nil {
+		return AppConfig{}, err
+	}
+	var appCfg AppConfig
+	if err := json.Unmarshal([]byte(content), &appCfg); err != nil {
+		return AppConfig{}, fmt.Errorf("Nacos 設定檔 JSON 解析失敗: %w", err)
+	}
+	return appCfg, nil
 }
