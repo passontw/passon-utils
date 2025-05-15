@@ -1,0 +1,17 @@
+{
+    "PORT": "8080",
+    "DB_HOST": "172.237.27.51",
+    "DB_PORT": 15432,
+    "DB_NAME": "games",
+    "DB_USER": "postgres",
+    "DB_PASSWORD": "1qaz@WSX3edc",
+    "JWT_SECRET": "MIICWgIBAAKBgGQPk8uFahTSXZH5RrEdOjpFgJ6beem/tiaPpGk00y46zDiyEWn7f6YD7mNshzoKM1oiedMWLHZpfjzpdLTVygemri9BGdvXGBzsAgVQaZ2PjA173syEmw1E4V/7L3MhbVFD80h42DgZXbrF4frMXh+9P+wnEP+7Z3lKWHknjcH9AgMBAAECgYBVmJnG7Y9M1pRi7kqR8r2/4Xrgs4H7+xsYK6LquNy63GOdUH7jGdkdrJk+hjW7",
+    "JWT_EXPIRES_IN": "24h",
+    "API_HOST": "localhost:3000",
+    "VERSION": "0.9.0",
+    "REDIS_HOST": "172.237.27.51",
+    "REDIS_PORT": "6379",
+    "REDIS_USERNAME": "passontw",
+    "REDIS_PASSWORD": "1qaz@WSX3edc",
+    "REDIS_DB": 1
+}
